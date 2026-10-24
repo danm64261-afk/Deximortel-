@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ht" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeX imortel - Rechaj Jwèt pi Rapid an Ayiti</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#7c3aed',
+                            darkPurple: '#5b21b6',
+                            orange: '#f97316',
+                            dark: '#0f0c1b',
+                            card: '#1a162b',
+                            cardHover: '#251f3d'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #0f0c1b;
+            color: #f3f4f6;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        .glow-purple {
+            box-shadow: 0 0 25px rgba(124, 58, 237, 0.35);
+        }
+        .glow-orange {
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1a162b;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #7c3aed;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between custom-scrollbar">
+
+    <!-- NAVBAR -->
+    <header class="bg-brand-card/90 backdrop-blur-md border-b border-purple-900/40 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="scrollToGames()">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brand-purple to-brand-orange flex items-center justify-center shadow-lg shadow-purple-900/50">
+                    <i class="fa-solid font-black text-2xl text-white">D</i>
+                </div>
+                <div>
+                    <h1 class="font-extrabold text-2xl tracking-wider text-white">DeX <span class="text-brand-orange">imortel</span></h1>
+                    <p class="text-xs text-purple-300">Rechaj Jwèt an Ayiti (HTG)</p>
+                </div>
+            </div>
+
+            <!-- Contact Quick Info -->
+            <div class="hidden md:flex items-center space-x-4">
+                <div class="bg-purple-950/60 border border-purple-800/40 rounded-lg px-4 py-2 flex items-center space-x-3">
+                    <i class="fa-solid fa-phone text-brand-orange"></i>
+                    <div>
+                        <p class="text-xs text-gray-400">Peman MonCash / NatCash</p>
+                        <p class="text-sm font-bold text-white">56701843</p>
+                    </div>
+                </div>
+                <a href="https://wa.me/50956701843" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-bold text-sm flex items-center space-x-2 transition shadow-md">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Sèvis WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- BANNER HERO -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-purple-950/40 to-brand-dark py-12 px-4">
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <span class="inline-block bg-purple-900/60 text-brand-orange text-xs font-bold px-4 py-1.5 rounded-full border border-purple-700/50 mb-4 tracking-wide uppercase">
+                🚀 Rechaj Ultra Rapid & Sekirize
+            </span>
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+                Achte Diamants ak Pass pou Jwèt ou yo sou <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-purple-400">DeX imortel</span>
+            </h2>
+            <p class="text-gray-300 max-w-2xl mx-auto text-sm md:text-base mb-6">
+                Peye an Goud (HTG) ak <strong>MonCash</strong> oswa <strong>NatCash</strong> sou nimewo <span class="text-brand-orange font-bold">56701843</span>. Resevwa rechaj ou an kèk minit sèlman!
+            </p>
+        </div>
+    </section>
+
+    <!-- MAIN CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
+        
+        <!-- STEP 1: CHOOSE GAME -->
+        <div id="games-section" class="mb-12">
+            <div class="flex items-center space-x-3 mb-6">
+                <span class="w-8 h-8 rounded-full bg-brand-purple text-white font-bold flex items-center justify-center text-sm">1</span>
+                <h3 class="text-xl font-bold text-white">Chwazi Jwèt w ap Rechaje a</h3>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4" id="games-grid">
+                <!-- Free Fire -->
+                <div onclick="selectGame('freefire')" id="card-freefire" class="game-card bg-brand-card hover:bg-brand-cardHover border-2 border-purple-900/40 rounded-2xl p-4 text-center cursor-pointer transition-all hover:scale-105 shadow-lg">
+                    <div class="w-20 h-20 mx-auto mb-3 rounded-xl overflow-hidden bg-purple-900/50 flex items-center justify-center">
+                        <i class="fa-solid fa-fire-flame-curved text-4xl text-brand-orange"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-base">Free Fire</h4>
+                    <p class="text-xs text-gray-400 mt-1">Diamants & Pass</p>
+                </div>
+
+                <!-- Call of Duty Mobile -->
+                <div onclick="selectGame('codm')" id="card-codm" class="game-card bg-brand-card hover:bg-brand-cardHover border-2 border-purple-900/40 rounded-2xl p-4 text-center cursor-pointer transition-all hover:scale-105 shadow-lg">
+                    <div class="w-20 h-20 mx-auto mb-3 rounded-xl overflow-hidden bg-purple-900/50 flex items-center justify-center">
+                        <i class="fa-solid fa-crosshair text-4xl text-yellow-500"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-base">COD Mobile</h4>
+                    <p class="text-xs text-gray-400 mt-1">CP Points</p>
+                </div>
+
+                <!-- PUBG Mobile -->
+                <div onclick="selectGame('pubg')" id="card-pubg" class="game-card bg-brand-card hover:bg-brand-cardHover border-2 border-purple-900/40 rounded-2xl p-4 text-center cursor-pointer transition-all hover:scale-105 shadow-lg">
+                    <div class="w-20 h-20 mx-auto mb-3 rounded-xl overflow-hidden bg-purple-900/50 flex items-center justify-center">
+                        <i class="fa-solid fa-shield-halved text-4xl text-emerald-500"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-base">PUBG Mobile</h4>
+                    <p class="text-xs text-gray-400 mt-1">UC Points</p>
+                </div>
+
+                <!-- Roblox -->
+                <div onclick="selectGame('roblox')" id="card-roblox" class="game-card bg-brand-card hover:bg-brand-cardHover border-2 border-purple-900/40 rounded-2xl p-4 text-center cursor-pointer transition-all hover:scale-105 shadow-lg">
+                    <div class="w-20 h-20 mx-auto mb-3 rounded-xl overflow-hidden bg-purple-900/50 flex items-center justify-center">
+                        <i class="fa-solid fa-cube text-4xl text-red-500"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-base">Roblox</h4>
+                    <p class="text-xs text-gray-400 mt-1">Robux</p>
+                </div>
+
+                <!-- Netflix -->
+                <div onclick="selectGame('netflix')" id="card-netflix" class="game-card bg-brand-card hover:bg-brand-cardHover border-2 border-purple-900/40 rounded-2xl p-4 text-center cursor-pointer transition-all hover:scale-105 shadow-lg">
+                    <div class="w-20 h-20 mx-auto mb-3 rounded-xl overflow-hidden bg-purple-900/50 flex items-center justify-center">
+                        <i class="fa-solid fa-tv text-4xl text-red-600"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-base">Netflix</h4>
+                    <p class="text-xs text-gray-400 mt-1">Abonman / Kat</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FORM SECTION (PLAYER ID & PACKAGES) -->
+        <div id="recharge-form" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            
+            <!-- Left Panel: ID & Packages -->
+            <div class="lg:col-span-2 space-y-8">
+                
+                <!-- STEP 2: PLAYER ID -->
+                <div class="bg-brand-card border border-purple-900/40 rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <span class="w-8 h-8 rounded-full bg-brand-purple text-white font-bold flex items-center justify-center text-sm">2</span>
+                        <h3 class="text-lg font-bold text-white">Mete Player ID (ID Jwè a)</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <label class="block text-xs text-gray-300 font-medium">Antre ID jwèt ou an avèk presizyon:</label>
+                        <div class="relative">
+                            <input type="text" id="player-id" placeholder="Egzanp: 1234567890" class="w-full bg-brand-dark border border-purple-800/60 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 3: CHOOSE PACKAGE -->
+                <div class="bg-brand-card border border-purple-900/40 rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <span class="w-8 h-8 rounded-full bg-brand-purple text-white font-bold flex items-center justify-center text-sm">3</span>
+                        <h3 class="text-lg font-bold text-white">Chwazi Pakèt ou ta Renmen an</h3>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4" id="packages-container">
+                        <!-- Dynamic Packages Inserted Here by JavaScript -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Panel: Order Summary & Payment -->
+            <div class="space-y-6">
+                <div class="bg-brand-card border border-brand-purple/60 rounded-2xl p-6 shadow-2xl sticky top-28">
+                    <h3 class="text-lg font-extrabold text-white mb-4 border-b border-purple-900/60 pb-3 flex items-center justify-between">
+                        <span>Rezime Kòmand la</span>
+                        <i class="fa-solid fa-receipt text-brand-orange"></i>
+                    </h3>
+
+                    <div class="space-y-4 mb-6">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">Jwèt:</span>
+                            <span id="summary-game" class="font-bold text-white">Poko chwazi</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">Player ID:</span>
+                            <span id="summary-id" class="font-bold text-brand-orange">---</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">Pakèt:</span>
+                            <span id="summary-package" class="font-bold text-white">Poko chwazi</span>
+                        </div>
+                        <div class="border-t border-purple-900/40 pt-3 flex justify-between items-center">
+                            <span class="font-bold text-white text-base">Total pou Peye:</span>
+                            <span id="summary-price" class="font-extrabold text-xl text-brand-orange">0 HTG</span>
+                        </div>
+                    </div>
+
+                    <!-- Payment Method Selection -->
+                    <div class="mb-6 space-y-3">
+                        <label class="block text-xs font-bold text-gray-300">Chwazi Mòd Peman an:</label>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="payment_method" value="MonCash" checked class="peer hidden">
+                                <div class="bg
